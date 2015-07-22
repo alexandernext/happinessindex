@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :time_of_day, "時間" %><br>
+    <%= f.select :time_of_day, [['早上','morning'],['下午','afternoon'],['晚上','evening']] %>
+  </div>
   <div class="field">
     <%= f.label :value, "評分" %><br>
     <%= f.number_field :value %>
@@ -20,10 +23,6 @@
     <%= f.text_area :description %>
   </div>
     <%= f.hidden_field :day, { :value => Date.today } %>
-  <div class="field">
-    <%= f.label :time_of_day, "時間" %><br>
-    <%= f.select :time_of_day, [['早上','morning'],['下午','afternoon'],['晚上','evening']] %>
-  </div>
     <%= f.hidden_field :user_id, { :value => current_user.id } %>
   <div class="actions">
     <%= f.submit "送出" %>
