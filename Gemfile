@@ -40,5 +40,6 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 gem 'rails-i18n', '~> 4.0.0'
