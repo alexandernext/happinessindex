@@ -36,7 +36,7 @@ class ScoresController < ApplicationController
     respond_to do |format|
       if @score.save
         format.html { redirect_to scores_path, notice: '完成新增。' }
-        format.json { render :show, status: :created, location: @score }
+        format.json { render scores_path, status: :created }
       else
         format.html { render :new }
         format.json { render json: @score.errors, status: :unprocessable_entity }
