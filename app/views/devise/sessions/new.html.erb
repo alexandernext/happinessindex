@@ -1,5 +1,7 @@
 <h2><%= t('.sign_in', :default => "Sign in") %></h2>
 
+<p><b>若第一次使用本網站者，請先<%= link_to t(".sign_up", :default => "註冊"), new_registration_path(resource_name) %>帳號。</b></p>
+
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
