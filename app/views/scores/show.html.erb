@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @score.value %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @score.description %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @score.day %>
+</p>
+
+<p>
+  <strong>Time of day:</strong>
+  <%= @score.time_of_day %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @score.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_score_path(@score) %> |
+<%= link_to 'Back', scores_path %>

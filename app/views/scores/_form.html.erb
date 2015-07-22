@@ -1,0 +1,31 @@
+<%= form_for(@score) do |f| %>
+  <% if @score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@score.errors.count, "error") %> prohibited this score from being saved:</h2>
+
+      <ul>
+      <% @score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :value, "評分" %><br>
+    <%= f.number_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "理由" %><br>
+    <%= f.text_area :description %>
+  </div>
+    <%= f.hidden_field :day, { :value => Date.today } %>
+  <div class="field">
+    <%= f.label :time_of_day, "時間" %><br>
+    <%= f.select :time_of_day, [['早上','morning'],['下午','afternoon'],['晚上','evening']] %>
+  </div>
+    <%= f.hidden_field :user_id, { :value => current_user.id } %>
+  <div class="actions">
+    <%= f.submit "送出" %>
+  </div>
+<% end %>
