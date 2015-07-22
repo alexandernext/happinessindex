@@ -16,5 +16,4 @@ class Score < ActiveRecord::Base
       return "晚上"
     end
   end
-
 end

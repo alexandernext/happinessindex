@@ -1,9 +1,26 @@
-<h1>今日指數列表</h1>
-
-<%= render 'table' %>
-
-<br>
-
-<%= link_to '新增評分', new_score_path %>
-
-<%= link_to '登出', destroy_user_session_path, method: :delete %>
+<div class="row">
+  <div class="col-md-8">
+    <div class="pane">
+      <h1>今日指數列表</h1>
+      <%= render 'table' %>
+      <br>
+      <%= link_to '新增評分', new_score_path %>
+      <%= link_to '登出', destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
+  <% if weekly_average() != nil || daily_average() != nil %>
+  <div class="col-md-4">
+    <div class="pane text-center">
+      <% if daily_average() != nil %>
+        <h1>一日平均</h1>
+        <div class="dashboard-number colored<%= daily_average().round(0) %>"><%= daily_average().round(1) %></div>
+      <% end %>
+      <% if weekly_average() != nil %>
+        <h1>一週平均</h1>
+        <div class="dashboard-number colored<%= weekly_average().round(0) %>"><%= weekly_average().round(1) %></div>
+      <% end %>
+      <br>
+    </div>
+  </div>
+  <% end %>
+</div>

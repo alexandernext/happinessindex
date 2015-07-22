@@ -1,5 +1,4 @@
-<div class="row">
-  <div class="col-md-8">
+
     <table class="table table-default">
       <thead>
         <tr>
@@ -12,26 +11,15 @@
       </thead>
 
       <tbody>
-        <% score_sum = 0 %>
         <% @scores.each do |score| %>
           <tr>
             <td><%= score.day %></td>
             <td><%= score.time_text(score) %></td>
-            <td><%= score.value %></td>
-            <% score_sum += score.value %>
+            <td class="colored<%= score.value %>"><%= score.value %></td>
             <td><%= score.description %></td>
-            <td><%= link_to '編輯', edit_score_path(score) %></td>
-            <td><%= link_to '刪除', score, method: :delete, data: { confirm: '是否確定刪除此筆紀錄？' } %></td>
-          </tr>
-        <% end %>
-        <% if @scores.count > 0 %>
-          <tr>
-            <td><b>目前平均值<b></td>
-            <td></td>
-            <td><%= (score_sum.to_f / @scores.count).round(1) %></td>
+            <td class="text-center"><%= link_to '編輯', edit_score_path(score) %></td>
+            <td class="text-center"><%= link_to '刪除', score, method: :delete, data: { confirm: '是否確定刪除此筆紀錄？' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
-  </div>
-</div>

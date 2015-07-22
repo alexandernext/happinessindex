@@ -16,7 +16,7 @@
   </div>
   <div class="field">
     <%= f.label :value, "評分" %><br>
-    <%= f.number_field :value %>
+    <%= f.select :value, %w(10 9 8 7 6 5 4 3 2 1) %>
   </div>
   <div class="field">
     <%= f.label :description, "理由" %><br>
