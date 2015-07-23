@@ -1,7 +1,7 @@
 class Score < ActiveRecord::Base
   belongs_to :user
   validates :value, presence: true, numericality: { :only_integer => true, :less_than_or_equal_to => 10, :greater_than_or_equal_to => 1}
-  validates :time_of_day, presence: true, inclusion: { in: %w(morning afternoon evening) }, uniqueness: { scope: :day }
+  validates :time_of_day, presence: true, inclusion: { in: %w(morning afternoon evening) }, uniqueness: { scope: [:day, :user] }
   validates :description, presence: true
   validates :user, presence: true
   validates :day, presence: true
