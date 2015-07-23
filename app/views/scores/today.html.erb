@@ -1,11 +1,9 @@
 <div class="row">
   <div class="col-md-8">
     <div class="pane">
-      <h1>今日指數列表</h1>
+      <h1>今日快樂指標</h1>
       <%= render 'table' %>
       <br>
-      <%= link_to '新增評分', new_score_path %>
-      <%= link_to '登出', destroy_user_session_path, method: :delete %>
     </div>
   </div>
   <% if weekly_average() != nil || daily_average() != nil %>
@@ -18,7 +16,7 @@
       <% if weekly_average() != nil %>
         <h1>一週平均</h1>
         <div class="dashboard-number colored<%= weekly_average().round(0) %>"><%= weekly_average().round(1) %></div>
-      <% end %> 
+      <% end %>
       <br>
     </div>
   </div>

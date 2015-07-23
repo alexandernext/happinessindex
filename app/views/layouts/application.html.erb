@@ -10,21 +10,16 @@
 </head>
 <body>
   <div class="container">
+    <%= render 'shared/header' %>
     <div class="row">
-      <% if notice != nil || alert != nil %>
-        <div class="col-md-8">
+      <div class="col-md-12">
+        <div class="pane">
           <% if notice != nil %>
           <div class="alert alert-success" role="alert"><%= notice %></div>
           <% end %>
           <% if alert != nil %>
           <div class="alert alert-danger" role="alert"><%= alert %></div>
           <% end %>
-        </div>
-      <% end %>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="pane">
           <%= yield %>
         </div>
       </div>
