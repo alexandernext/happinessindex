@@ -15,15 +15,36 @@
  */
  body {
    background-color: #ecf0f1;
+   padding-top: 90px;
+ }
+ h1, h2, h3, h4, p, div, td, li {
+   font-family:'Open Sans', Arial, 微軟正黑體, sans-serif;
  }
  .navbar-default {
-   border-radius: 5px;
-   background-color: white;
-   box-shadow: 0 0 25px rgba(0,0,0,0.04);
-   margin-top: 15px;
+   background-color: #f39c12;
+   padding: 10px;
+   border: none;
+   box-shadow: 0 0 25px rgba(0,0,0,0.2);
  }
+ .navbar-header > .navbar-brand {
+   color: white;
+   font-size: 25px;
+   font-weight: 700;
+ }
+ .navbar-header > .navbar-brand:hover {
+   color: white;
+ }
+ .navbar-collapse > .nav > li > a, .navbar-collapse > .navbar-text {
+   color: white;
+   font-size: 15px;
+ }
+
  nav > div > div > ul > li:hover {
-   background-color: #ecf0f1;
+   background-color: #d35400;
+ }
+
+ .navbar-collapse > .nav > li > a:hover {
+   color: white;
  }
 
  p, td {
@@ -34,6 +55,7 @@
    border-radius: 5px;
    background-color: white;
    box-shadow: 0 0 25px rgba(0,0,0,0.04);
+   margin-bottom: 20px;
  }
 
  .colored10 {
