@@ -35,13 +35,14 @@ class ScoresController < ApplicationController
 
     respond_to do |format|
       if @score.save
-        format.html { redirect_to scores_path, notice: '完成新增。' }
-        format.json { render scores_path, status: :created }
+        format.html { redirect_to today_scores_path, notice: '完成新增。' }
+        format.json { redirect_to today_scores_path, status: :created }
       else
         format.html { render :new }
         format.json { render json: @score.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /scores/1
@@ -49,8 +50,8 @@ class ScoresController < ApplicationController
   def update
     respond_to do |format|
       if @score.update(score_params)
-        format.html { redirect_to @score, notice: '完成更新。' }
-        format.json { render :show, status: :ok, location: @score }
+        format.html { redirect_to today_scores_path, notice: '完成更新。' }
+        format.json { redirect_to today_scores_path, status: :ok, location: @score }
       else
         format.html { render :edit }
         format.json { render json: @score.errors, status: :unprocessable_entity }
