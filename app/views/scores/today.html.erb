@@ -11,15 +11,15 @@
   <div class="col-md-4">
     <div class="pane text-center">
       <% if daily_average() != nil %>
-        <h1>一日平均</h1>
+        <h1>今日平均</h1>
         <div class="dashboard-number colored<%= daily_average().round(0) %>"><%= daily_average().round(1) %></div>
       <% end %>
       <% if weekly_average() != nil %>
-        <h1>一週平均</h1>
+        <h1>七天平均</h1>
         <div class="dashboard-number colored<%= weekly_average().round(0) %>"><%= weekly_average().round(1) %></div>
       <% end %>
       <% if monthly_average() != nil %>
-        <h1>一週平均</h1>
+        <h1>30天平均</h1>
         <div class="dashboard-number colored<%= weekly_average().round(0) %>"><%= weekly_average().round(1) %></div>
       <% end %>
       <br>

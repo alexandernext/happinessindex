@@ -1,6 +1,6 @@
 module ScoresHelper
   def weekly_average
-    week_scores = current_user.scores.where("day > ?", Date.today - Date.today.wday)
+    week_scores = current_user.scores.where("day > ?", Date.today - 7)
     if week_scores.count == 0
       return nil
     else
@@ -18,7 +18,7 @@ module ScoresHelper
   end
 
   def monthly_average
-    monthly_scores = current_user.scores.where("day >= ?", Date.new(Date.today.year, Date.today.month, 1))
+    monthly_scores = current_user.scores.where("day >= ?", Date.today - 30)
     if monthly_scores.count == 0
       return nil
     else
