@@ -15,7 +15,7 @@
           <% afternoon = @afternoon_scores.where(:day => day).first %>
           <% evening = @evening_scores.where(:day => day).first %>
           <tr>
-            <td><%= day %> (<%= I18n.t(:"date.day_names")[day.wday] %>)</td>
+            <td><b><%= day.strftime("%m/%d") %></b></td>
             <% if morning != nil %>
               <td class="colored<%= morning.value%>"><%= morning.value %><br/><%= morning.description %></td>
             <% else %>
