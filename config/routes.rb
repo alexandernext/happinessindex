@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :scores do
     collection do
       get 'today'
+      get 'week'
     end
   end
 

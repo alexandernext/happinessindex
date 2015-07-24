@@ -13,6 +13,13 @@ class ScoresController < ApplicationController
   def show
   end
 
+  def week
+    @last_seven_days = [Date.today, Date.today - 1, Date.today - 2, Date.today - 3, Date.today - 4, Date.today - 5, Date.today - 6]
+    @morning_scores = current_user.scores.where("day > ?", Date.today - 7).where(:time_of_day => "morning")
+    @afternoon_scores = current_user.scores.where("day > ?", Date.today - 7).where(:time_of_day => "afternoon")
+    @evening_scores = current_user.scores.where("day > ?", Date.today - 7).where(:time_of_day => "evening")
+  end
+
   # GET /scores/today
   # GET /scores/today.json
   def today
@@ -42,7 +49,7 @@ class ScoresController < ApplicationController
         format.json { render json: @score.errors, status: :unprocessable_entity }
       end
     end
-    
+
   end
 
   # PATCH/PUT /scores/1

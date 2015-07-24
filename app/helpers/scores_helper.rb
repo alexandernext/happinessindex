@@ -1,5 +1,8 @@
 module ScoresHelper
   def weekly_average
+    if !user_signed_in?
+      return nil
+    end
     week_scores = current_user.scores.where("day > ?", Date.today - 7)
     if week_scores.count == 0
       return nil
@@ -9,6 +12,9 @@ module ScoresHelper
   end
 
   def daily_average
+    if !user_signed_in?
+      return nil
+    end
     daily_scores = current_user.scores.where(day: Date.today)
     if daily_scores.count == 0
       return nil
@@ -18,6 +24,9 @@ module ScoresHelper
   end
 
   def monthly_average
+    if !user_signed_in?
+      return nil
+    end
     monthly_scores = current_user.scores.where("day >= ?", Date.today - 30)
     if monthly_scores.count == 0
       return nil

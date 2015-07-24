@@ -14,17 +14,19 @@
   <div class="container">
     <%= render 'shared/header' %>
     <div class="row">
-      <div class="col-md-12">
-        <div class="pane">
+      <% if notice != nil || alert != nil %>
+        <div class="col-md-8">
           <% if notice != nil %>
           <div class="alert alert-success" role="alert"><%= notice %></div>
           <% end %>
           <% if alert != nil %>
           <div class="alert alert-danger" role="alert"><%= alert %></div>
           <% end %>
-          <%= yield %>
         </div>
-      </div>
+      <% end %>
+    </div>
+    <div class="pane">
+      <%= yield %>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
