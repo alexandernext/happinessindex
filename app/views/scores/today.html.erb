@@ -1,29 +1,8 @@
-<div class="row">
-  <div class="col-md-8">
-    <div class="pane">
-      <h1>今日快樂指標</h1>
-      <%= render 'table' %>
-      <br>
-      <%= link_to '新增快樂', new_score_path %>
-    </div>
+<div class="col-md-8">
+  <div class="pane">
+    <h1>今日快樂指標</h1>
+    <%= render 'table' %>
+    <br>
+    <%= link_to '新增快樂', new_score_path %>
   </div>
-  <% if weekly_average() != nil || daily_average() != nil || monthly_average() != nil %>
-  <div class="col-md-4">
-    <div class="pane text-center">
-      <% if daily_average() != nil %>
-        <h1>今日平均</h1>
-        <div class="dashboard-number colored<%= daily_average().round(0) %>"><%= daily_average().round(1) %></div>
-      <% end %>
-      <% if weekly_average() != nil %>
-        <h1>七天平均</h1>
-        <div class="dashboard-number colored<%= weekly_average().round(0) %>"><%= weekly_average().round(1) %></div>
-      <% end %>
-      <% if monthly_average() != nil %>
-        <h1>30天平均</h1>
-        <div class="dashboard-number colored<%= weekly_average().round(0) %>"><%= weekly_average().round(1) %></div>
-      <% end %>
-      <br>
-    </div>
-  </div>
-  <% end %>
 </div>
