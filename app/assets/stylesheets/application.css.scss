@@ -27,7 +27,7 @@
    background-color: #f39c12;
    padding: 10px;
    border: none;
-   box-shadow: 0 0 25px rgba(0,0,0,0.2);
+   box-shadow: 0 0 25px rgba(0,0,0,0.3);
  }
  .navbar-header > .navbar-brand {
    color: white;
@@ -44,6 +44,7 @@
 
  nav > div > div > ul > li:hover {
    background-color: #d35400;
+   border-radius: 10px;
  }
 
  .navbar-collapse > .nav > li > a:hover {
@@ -57,7 +58,7 @@
    padding: 30px;
    border-radius: 5px;
    background-color: white;
-   box-shadow: 0 0 25px rgba(0,0,0,0.04);
+   box-shadow: 0 0 25px rgba(0,0,0,0.1);
    margin-bottom: 20px;
  }
 
