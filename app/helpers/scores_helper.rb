@@ -35,4 +35,14 @@ module ScoresHelper
     end
   end
 
+  def color(score)
+    case score.round(0)
+    when 1..5
+      return "#e74c3c"
+    when 6..10
+      return "#00B16A"
+    else
+      return "#000000"
+    end
+  end
 end
