@@ -21,6 +21,9 @@
     </div>
     <% end %>
     <br>
+    <% if weekly_average() != nil %>
+      <img src="<%= weekly_chart %>" class="img-responsive"></img>
+    <% end %>
   </div>
 </div>
 <% end %>

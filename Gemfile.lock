@@ -49,6 +49,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.5.2)
+    googlecharts (1.6.10)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.3.1)
@@ -138,6 +139,7 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  googlecharts
   jbuilder (~> 2.0)
   jquery-rails
   pg
