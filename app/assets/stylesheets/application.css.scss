@@ -119,3 +119,17 @@
   font-size: 25px;
   display: inline-block
 }
+
+.btn-primary {
+  background-color: #00b16a;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+.btn-primary:visited {
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #00a15a;
+}
