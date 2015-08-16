@@ -69,7 +69,7 @@ module ScoresHelper
   end
 
   def weekly_chart
-    return Gchart.bar(  :size => '200x200',
+    return Gchart.bar(  :size => '300x200',
               :data => weekly_average_scores,
               :bar_colors => '00B16A',
               :labels => [(Date.today - 6).day, (Date.today - 5).day, (Date.today - 4).day, (Date.today - 3).day, (Date.today - 2).day, (Date.today - 1).day, Date.today.day],

@@ -1,6 +1,7 @@
 class ScoresController < ApplicationController
   before_action :set_score, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :is_current_user, only: [:show, :edit, :update, :destroy]
 
   # GET /scores
   # GET /scores.json
@@ -80,6 +81,12 @@ class ScoresController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_score
       @score = Score.find(params[:id])
+    end
+
+    def is_current_user
+      if @score.user != current_user
+        redirect_to scores_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
