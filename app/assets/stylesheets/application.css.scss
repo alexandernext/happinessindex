@@ -104,9 +104,11 @@
  }
 
 .btn-primary {
-  background-color: #40d47e;
+  background-color: #2ecc71;
   color: white;
   border: none;
+  border-bottom: 2px solid #27ae60;
+  border-right: 1px solid #27ae60;
   font-size: 18px;
   font-weight: 700;
 }
@@ -115,6 +117,7 @@
 }
 .btn-primary:hover, .btn-primary:active {
   background-color: #27ae60;
+  border: none;
 }
 .inline-block {
   display: inline-block;
@@ -141,6 +144,8 @@
   background-color: #f39c12;
   color: white;
   border: none;
+  border-bottom: 2px solid #e67e22;
+  border-right: 1px solid #e67e22;
   font-size: 18px;
   font-weight: 700;
 }
@@ -149,4 +154,5 @@
 }
 .btn-info:hover, .btn-info:active {
   background-color: #e67e22;
+  border: none;
 }
