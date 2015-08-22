@@ -102,26 +102,9 @@
    background-color: #e74c3c;
    color: white;
  }
-.dashboard-number {
-  border-radius: 5px;
-  text-align: center;
-  font-size: 25px;
-  padding: 15px;
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.dashboard-score {
-  display: block;
-  margin-top: 10px;
-}
-.dashboard-score > p {
-  font-size: 25px;
-  display: inline-block
-}
 
 .btn-primary {
-  background-color: #00b16a;
+  background-color: #40d47e;
   color: white;
   border: none;
   font-size: 18px;
@@ -130,6 +113,40 @@
 .btn-primary:visited {
   color: white;
 }
-.btn-primary:hover {
-  background-color: #00a15a;
+.btn-primary:hover, .btn-primary:active {
+  background-color: #27ae60;
+}
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.pane > h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.dashboard-row {
+  border-bottom: 1px solid #ecf0f1;
+  padding: 15px;
+}
+
+.green {
+  color: #2ecc71;
+}
+.orange {
+  color: #f39c12;
+}
+
+.btn-info {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+.btn-info:visited {
+  color: white;
+}
+.btn-info:hover, .btn-info:active {
+  background-color: #e67e22;
 }

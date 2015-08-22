@@ -1,0 +1,21 @@
+<div class="col-md-8">
+  <div class="pane">
+    <h1 class="inline-block">最新動態</h1>
+    <%= link_to '＋新增快樂', new_score_path, class: "btn btn-primary inline-block" %>
+    <% current_user.scores.where("value > ?", 8).sample(2).each do |score| %>
+    <div class="dashboard-row">
+      <img src="/question.png" class="img-responsive inline-block"></img>
+      <h3 class="inline-block orange"><b><%= score.description %>讓你感到<%= score.value %>分的快樂</b></h3>
+      <%= link_to '再次體驗', new_score_path, class: "btn btn-info inline-block" %>
+    </div>
+    <% end %>
+    <% current_user.scores.sort_by{ |score| score.day }.reverse[0,9].each do |score| %>
+      <% time = timestring(score) %>
+      <div class="dashboard-row">
+        <img src="/happiness.png" class="img-responsive inline-block"></img>
+        <h3 class="inline-block green"><b><%= score.day.strftime("%m/%d") %> <%= time %>，你感到<%= score.value %>分的快樂</b></h3>
+        <%= link_to '編輯', edit_score_path(score), class: "btn btn-primary inline-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>

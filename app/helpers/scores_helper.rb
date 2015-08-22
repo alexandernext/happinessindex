@@ -68,6 +68,18 @@ module ScoresHelper
     return week_averages
   end
 
+  def timestring(score)
+    case score.time_of_day
+      when "morning"
+        time = "早上"
+      when "afternoon"
+        time = "下午"
+      when "evening"
+        time = "晚上"
+      end
+    return time
+  end
+
   def weekly_chart
     return Gchart.bar(  :size => '300x200',
               :data => weekly_average_scores,

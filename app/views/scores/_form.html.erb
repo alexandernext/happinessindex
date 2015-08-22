@@ -25,6 +25,6 @@
     <%= f.hidden_field :day, { :value => Date.today } %>
     <%= f.hidden_field :user_id, { :value => current_user.id } %>
   <div class="actions">
-    <%= f.submit "送出" %>
+    <%= f.submit "＋送出", class: "btn btn-primary" %>
   </div>
 <% end %>

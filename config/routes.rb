@@ -7,7 +7,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :index do
+  resources :home do
+    collection do
+      get 'index'
+    end
+  end
+
+  resources :dashboard do
     collection do
       get 'index'
     end

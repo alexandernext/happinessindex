@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     if user_signed_in?
-      redirect_to scores_path
+      redirect_to dashboard_index_path
     end
   end
 end

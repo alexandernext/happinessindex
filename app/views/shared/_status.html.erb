@@ -3,21 +3,21 @@
   <div class="pane">
     <h1>快樂指數</h1>
     <% if daily_average() != nil %>
-      <div class="dashboard-score">
+      <div class="status-score">
         <p style="color: <%= color(daily_average().round(0)) %>">今日平均</p>
-        <div class="dashboard-number colored<%= daily_average().round(0) %>"><%= daily_average().round(1) %></div>
+        <div class="status-number colored<%= daily_average().round(0) %>"><%= daily_average().round(1) %></div>
       </div>
     <% end %>
     <% if weekly_average() != nil %>
-    <div class="dashboard-score">
+    <div class="status-score">
       <p style="color: <%= color(weekly_average().round(0)) %>">七天平均</p>
-      <div class="dashboard-number colored<%= weekly_average().round(0) %>"><%= weekly_average().round(1) %></div>
+      <div class="status-number colored<%= weekly_average().round(0) %>"><%= weekly_average().round(1) %></div>
     </div>
     <% end %>
     <% if monthly_average() != nil %>
-    <div class="dashboard-score">
+    <div class="status-score">
       <p style="color: <%= color(monthly_average().round(0)) %>">30天平均</p>
-      <div class="dashboard-number colored<%= monthly_average().round(0) %>"><%= monthly_average().round(1) %></div>
+      <div class="status-number colored<%= monthly_average().round(0) %>"><%= monthly_average().round(1) %></div>
     </div>
     <% end %>
     <br>
